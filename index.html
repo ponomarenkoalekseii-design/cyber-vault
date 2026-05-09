@@ -10,7 +10,7 @@
             --accent: #00d4ff;
             --bg: #050505;
             --text: #e0e0e0;
-            --dim: #666;
+            --dim: #444;
         }
         body {
             background-color: var(--bg);
@@ -25,12 +25,58 @@
         }
         .header {
             width: 100%;
-            padding: 40px 0;
+            padding: 60px 0;
             text-align: center;
             border-bottom: 1px solid #1a1a1f;
             background: linear-gradient(to bottom, #0a0a0c, var(--bg));
         }
-        /* ЛОГОТИП (CSS-версия, пока нет файла) */
+
+        /* --- КИБЕР-ГЛАЗ (LOGOTYPE) --- */
+        .eye-container {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+        }
+        .eye-outer {
+            width: 100px;
+            height: 55px;
+            border: 2px solid var(--accent);
+            border-radius: 100px 0;
+            transform: rotate(45deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .eye-outer:hover {
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
+            transform: rotate(45deg) scale(1.15);
+        }
+        .eye-iris {
+            width: 38px;
+            height: 38px;
+            background: radial-gradient(circle, var(--accent) 0%, #000 75%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: pulse 2.5s infinite;
+        }
+        .eye-pupil {
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #fff;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.7; }
+        }
+
         .logo-box {
             font-family: 'Orbitron', sans-serif;
             font-size: 2.5em;
@@ -57,17 +103,14 @@
             color: var(--accent);
             text-transform: uppercase;
             letter-spacing: 4px;
-            font-size: 1.2em;
+            font-size: 1.1em;
             margin-bottom: 30px;
         }
         .bio-section {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            margin-top: 60px;
             background: #0a0a0c;
             padding: 40px;
             border: 1px solid #1a1a1f;
+            margin-top: 40px;
         }
         .architect-name {
             font-size: 1.8em;
@@ -76,13 +119,14 @@
         }
         .role {
             color: var(--accent);
-            font-size: 0.9em;
+            font-size: 0.8em;
             margin-bottom: 25px;
             display: block;
+            letter-spacing: 2px;
         }
         .description {
             line-height: 1.8;
-            color: #aaa;
+            color: #999;
             font-size: 0.95em;
         }
         .ecosystem-grid {
@@ -97,61 +141,67 @@
             border: 1px solid #1a1a1f;
             text-align: center;
         }
-        .module h3 { font-size: 0.8em; margin-bottom: 10px; color: #fff; }
-        .module p { font-size: 0.7em; color: var(--dim); }
+        .module h3 { font-size: 0.7em; margin-bottom: 10px; color: #fff; letter-spacing: 1px; }
+        .module p { font-size: 0.65em; color: var(--dim); }
 
         .footer {
             margin-top: auto;
             padding: 40px;
-            font-size: 0.7em;
-            color: var(--dim);
+            font-size: 0.6em;
+            color: #333;
             text-align: center;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
     <div class="header">
+        <div class="eye-container">
+            <div class="eye-outer">
+                <div class="eye-iris">
+                    <div class="eye-pupil"></div>
+                </div>
+            </div>
+        </div>
         <div class="logo-box">CYBER-<span>VAULT</span></div>
-        <div style="letter-spacing: 5px; font-size: 0.7em; color: var(--dim);">PONOMARENKO & KO | FINTECH SOLUTIONS</div>
+        <div style="letter-spacing: 5px; font-size: 0.6em; color: var(--dim);">PONOMARENKO & KO | FINTECH SOLUTIONS</div>
     </div>
 
     <div class="main-container">
         
         <div class="status-panel">
             <h2>System Status</h2>
-            <div style="color: #00ff41;">> CORE: ACTIVE [ARCHITECT v1.0]</div>
-            <div style="color: #00ff41;">> SHIELD: OPERATIONAL [IRON DOME]</div>
-            <div style="color: #00ff41;">> TACTICAL: READY [SPEC FORCES JPY]</div>
+            <div style="color: #00ff41; font-size: 0.9em;">> CORE: ACTIVE [ARCHITECT v1.0]</div>
+            <div style="color: #00ff41; font-size: 0.9em;">> SHIELD: OPERATIONAL [IRON DOME]</div>
+            <div style="color: #00ff41; font-size: 0.9em;">> TACTICAL: READY [SPEC FORCES JPY]</div>
         </div>
 
         <div class="bio-section">
-            <div>
-                <h2>The Architect</h2>
-                <div class="architect-name">Aleksei Ponomarenko</div>
-                <span class="role">Chief Architect & Founder</span>
-                <p class="description">
-                    Ведущий разработчик и стратег в области алгоритмических торговых систем. 
-                    Автор концепции многоуровневой защиты капитала «Iron Dome». 
-                    Специализируется на создании автономных структур, 
-                    способных эффективно работать в условиях экстремальной рыночной волатильности. 
-                    Моя миссия — трансформировать математическую жесткость в стабильный финансовый рост.
-                </p>
-            </div>
+            <h2>The Architect</h2>
+            <div class="architect-name">Aleksei Ponomarenko</div>
+            <span class="role">Chief Architect & Founder</span>
+            <p class="description">
+                Ведущий разработчик и стратег в области алгоритмических торговых систем. 
+                Автор концепции многоуровневой защиты капитала «Iron Dome». 
+                Специализируется на создании автономных структур, 
+                способных эффективно работать в условиях экстремальной рыночной волатильности. 
+                Моя миссия — трансформировать математическую жесткость в стабильный финансовый рост.
+            </p>
         </div>
 
         <div class="ecosystem-grid">
             <div class="module">
                 <h3>ARCHITECT</h3>
-                <p>Глобальный мониторинг и принятие решений.</p>
+                <p>Глобальный мониторинг рынка.</p>
             </div>
             <div class="module">
                 <h3>IRON DOME</h3>
-                <p>Протокол защиты и управления рисками.</p>
+                <p>Протокол защиты капитала.</p>
             </div>
             <div class="module">
                 <h3>SPEC FORCES</h3>
-                <p>Тактический модуль для работы с JPY.</p>
+                <p>Тактический модуль JPY.</p>
             </div>
         </div>
 
