@@ -3,84 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CYBER-VAULT | Ponomarenko & ko</title>
+    <title>CYBER-VAULT | Chief Architect Ponomarenko</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --accent: #00d4ff;
+            --bg: #050505;
+            --text: #e0e0e0;
+            --dim: #666;
+        }
         body {
-            background-color: #0a0a0c;
-            color: #e0e0e0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Roboto Mono', monospace;
             margin: 0;
+            padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            min-height: 100vh;
         }
-        .container {
+        .header {
+            width: 100%;
+            padding: 40px 0;
             text-align: center;
-            border: 1px solid #1a1a1f;
-            padding: 50px;
-            background: radial-gradient(circle at center, #111 0%, #0a0a0c 100%);
-            box-shadow: 0 0 50px rgba(0, 255, 255, 0.05);
+            border-bottom: 1px solid #1a1a1f;
+            background: linear-gradient(to bottom, #0a0a0c, var(--bg));
         }
-        h1 {
-            letter-spacing: 10px;
+        /* ЛОГОТИП (CSS-версия, пока нет файла) */
+        .logo-box {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            letter-spacing: 8px;
             color: #fff;
-            margin-bottom: 5px;
-            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
         }
-        .subtitle {
-            color: #00d4ff;
-            font-size: 0.9em;
-            letter-spacing: 3px;
+        .logo-box span { color: var(--accent); }
+
+        .main-container {
+            max-width: 900px;
+            width: 90%;
+            padding: 60px 20px;
+        }
+        .status-panel {
+            border-left: 3px solid var(--accent);
+            padding-left: 30px;
+            margin-bottom: 80px;
+        }
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 1.2em;
             margin-bottom: 30px;
-            text-transform: uppercase;
         }
-        .status-box {
-            display: inline-block;
-            padding: 10px 20px;
-            border: 1px solid #333;
-            font-family: monospace;
-            font-size: 0.8em;
-            color: #00ff41;
-        }
-        .modules {
-            margin-top: 40px;
+        .bio-section {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
-            font-size: 0.7em;
-            text-transform: uppercase;
-            color: #666;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-top: 60px;
+            background: #0a0a0c;
+            padding: 40px;
+            border: 1px solid #1a1a1f;
         }
-        .footer {
+        .architect-name {
+            font-size: 1.8em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .role {
+            color: var(--accent);
+            font-size: 0.9em;
+            margin-bottom: 25px;
+            display: block;
+        }
+        .description {
+            line-height: 1.8;
+            color: #aaa;
+            font-size: 0.95em;
+        }
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
             margin-top: 50px;
-            font-size: 0.6em;
-            color: #333;
+        }
+        .module {
+            background: #0d0d0f;
+            padding: 20px;
+            border: 1px solid #1a1a1f;
+            text-align: center;
+        }
+        .module h3 { font-size: 0.8em; margin-bottom: 10px; color: #fff; }
+        .module p { font-size: 0.7em; color: var(--dim); }
+
+        .footer {
+            margin-top: auto;
+            padding: 40px;
+            font-size: 0.7em;
+            color: var(--dim);
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>CYBER-VAULT</h1>
-        <div class="subtitle">Ecosystem by Ponomarenko & ko</div>
-        
-        <div class="status-box">
-            > SYSTEM STATUS: ONLINE <br>
-            > ARCHITECT CORE: ACTIVE <br>
-            > IRON DOME: PROTECTED
-        </div>
 
-        <div class="modules">
-            <div>[ ARCHITECT ]</div>
-            <div>[ SPEC FORCES JPY ]</div>
-            <div>[ IRON DOME ]</div>
-        </div>
-
-        <div class="footer">
-            ESTABLISHED 2026. ALPHA ACCESS ONLY. <br>
-            AUTHORIZED BY CHIEF ARCHITECT PONOMARENKO.
-        </div>
+    <div class="header">
+        <div class="logo-box">CYBER-<span>VAULT</span></div>
+        <div style="letter-spacing: 5px; font-size: 0.7em; color: var(--dim);">PONOMARENKO & KO | FINTECH SOLUTIONS</div>
     </div>
+
+    <div class="main-container">
+        
+        <div class="status-panel">
+            <h2>System Status</h2>
+            <div style="color: #00ff41;">> CORE: ACTIVE [ARCHITECT v1.0]</div>
+            <div style="color: #00ff41;">> SHIELD: OPERATIONAL [IRON DOME]</div>
+            <div style="color: #00ff41;">> TACTICAL: READY [SPEC FORCES JPY]</div>
+        </div>
+
+        <div class="bio-section">
+            <div>
+                <h2>The Architect</h2>
+                <div class="architect-name">Aleksei Ponomarenko</div>
+                <span class="role">Chief Architect & Founder</span>
+                <p class="description">
+                    Ведущий разработчик и стратег в области алгоритмических торговых систем. 
+                    Автор концепции многоуровневой защиты капитала «Iron Dome». 
+                    Специализируется на создании автономных структур, 
+                    способных эффективно работать в условиях экстремальной рыночной волатильности. 
+                    Моя миссия — трансформировать математическую жесткость в стабильный финансовый рост.
+                </p>
+            </div>
+        </div>
+
+        <div class="ecosystem-grid">
+            <div class="module">
+                <h3>ARCHITECT</h3>
+                <p>Глобальный мониторинг и принятие решений.</p>
+            </div>
+            <div class="module">
+                <h3>IRON DOME</h3>
+                <p>Протокол защиты и управления рисками.</p>
+            </div>
+            <div class="module">
+                <h3>SPEC FORCES</h3>
+                <p>Тактический модуль для работы с JPY.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        © 2026 CYBER-VAULT. ALL RIGHTS RESERVED. <br>
+        DEVELOPED BY CHIEF ARCHITECT PONOMARENKO.
+    </div>
+
 </body>
 </html>
